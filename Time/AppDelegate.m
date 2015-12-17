@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LaunchViewController.h"
+#import "FirstViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    //
+    self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor=[UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    //判断是否是第一次运行
+    //NSUserDefaults 储存一些用户配置
+    NSUserDefaults *userDefaults =  [NSUserDefaults standardUserDefaults];
+    //通过一个key来获取一个值，如果没有找到这个值，则返回no;
+    BOOL first = [userDefaults boolForKey:@"first"];
+    if(!first)
+    {
+    
+        //第一次运行程序
+        self.window.rootViewController=[[FirstViewController alloc]init];
+        
+    }else{
+        self.window.rootViewController=[[LaunchViewController alloc]init];
+    }
+    
+    
+    
+    
+    
+   // self.window.rootViewController=[[LaunchViewController alloc]init];
+    
     return YES;
 }
 

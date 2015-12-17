@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  Time
+//
+//  Created by imac on 15/8/3.
+//  Copyright (c) 2015年 imac. All rights reserved.
+//
+
+/**
+ *  使用PCH文件的步骤
+ *  1. 选择 Other 创建 PCH File
+ *  2. 打开工程的选项 搜索 Prefix Header
+ *  3. 双击后面的空白处
+ *  4. 将创建好的pch文件拖入到输入框中自动生成文件路径
+ */
+
+#ifndef Time_PrefixHeader_pch
+#define Time_PrefixHeader_pch
+
+
+// 屏幕的宽高
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+// UIView类的扩展
+#import "UIViewExt.h"
+
+//SDWebImage
+
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+
+// 隐藏导航栏的通知名 
+#define kHiddenNavigationBar @"kHiddenNavigationBar"
+
+#endif

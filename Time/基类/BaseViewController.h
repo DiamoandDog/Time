@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BaseViewController.h
 //  Time
 //
 //  Created by imac on 15/8/3.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BaseViewController : UIViewController
 
 @end
-
